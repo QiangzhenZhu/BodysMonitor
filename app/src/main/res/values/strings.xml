@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">人体健康数据检测仪</string>
+    <string name="et_ip_string">请输入IP地址</string>
+    <string name="et_port_string">请输入端口号</string>
+    <string name="label_main_activity">数据显示</string>
+    <string name="temp_main_activity">实时温度：</string>
+    <string name="plus_main_activity">实时脉搏：</string>
+</resources>
