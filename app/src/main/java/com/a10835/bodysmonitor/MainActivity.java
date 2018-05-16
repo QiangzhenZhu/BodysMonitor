@@ -25,7 +25,15 @@ public class MainActivity extends AppCompatActivity {
         tcpClientConnector.setOnConnectLinstener(new TcpClientConnector.ConnectLinstener() {
             @Override
             public void onReceiveData(String data) {
-                mTemText.setText(data+"");
+                if (data.contains("t")){
+                    mTemText.setText(data.substring(1)+"");
+                    mPlusText.setText("");
+                }
+                else {
+                    mPlusText.setText(  data.substring(1)+"");
+                    mTemText.setText("");
+                }
+
             }
         });
     }

@@ -59,31 +59,28 @@ public class ConnectActivity extends AppCompatActivity {
         }
     }
 
-    public void Connect(){
+    public void Connect() {
         Ip = mIpEditText.getText().toString();
         Port = mPortEditText.getText().toString();
-        if (TextUtils.isEmpty(Ip)){
-            Toast.makeText(mContext,getResources().getString(R.string.et_ip_string),Toast.LENGTH_SHORT).show();
+        if (TextUtils.isEmpty(Ip)) {
+            Toast.makeText(mContext, getResources().getString(R.string.et_ip_string), Toast.LENGTH_SHORT).show();
             return;
-        }else if (TextUtils.isEmpty(Port)){
-            Toast.makeText(mContext,getResources().getString(R.string.et_port_string),Toast.LENGTH_SHORT).show();
+        } else if (TextUtils.isEmpty(Port)) {
+            Toast.makeText(mContext, getResources().getString(R.string.et_port_string), Toast.LENGTH_SHORT).show();
             return;
-        }
-        else {
+        } else {
             ChangeProgressBarState();
             tcpClientConnector = TcpClientConnector.getInstance();
-            tcpClientConnector.creatConnect(Ip,Integer.parseInt(Port));
+            tcpClientConnector.creatConnect(Ip, Integer.parseInt(Port));
             tcpClientConnector.setOnCreateSuccessListner(new TcpClientConnector.OnCreateSuccessListner() {
                 @Override
                 public void onSuccess() {
                     ChangeProgressBarState();
-                    startActivity(new Intent(mContext,MainActivity.class));
+                    startActivity(new Intent(mContext, MainActivity.class));
                     finish();
 
                 }
             });
-
-
 
 
         }
