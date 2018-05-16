@@ -26,11 +26,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onReceiveData(String data) {
                 if (data.contains("t")){
-                    mTemText.setText(data.substring(1)+"");
+                    mTemText.setText(data.substring(1)+""+" ℃");
                     mPlusText.setText("");
                 }
                 else {
-                    mPlusText.setText(  data.substring(1)+"");
+                    mPlusText.setText(  data.substring(1)+" bpm");
                     mTemText.setText("");
                 }
 

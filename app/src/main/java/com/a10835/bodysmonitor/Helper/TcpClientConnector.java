@@ -40,6 +40,9 @@ public class TcpClientConnector {
         this.onCreateSuccess = createSuccessListner;
     }
 
+    private TcpClientConnector(){
+    }
+
     public static TcpClientConnector getInstance() {
         if (mTcpClientConnector == null)
             mTcpClientConnector = new TcpClientConnector();
